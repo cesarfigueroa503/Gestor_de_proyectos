@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+
+    <style>
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 10px; /* Margen interno de 10px para todas las celdas */
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    
+        <h2>Lista de tareas</h2>
+        <table border = "1" class="tableStyle">
+            
+            <tr style="background-color: chocolate;">
+                <td style="max-width: 30px;">id</td>
+                <td>Tarea</td>
+                <td style="max-width: 200px">Descripcion</td>
+                <td>Proyecto</td>
+                <td>Estado</td>
+            </tr>
+            {% for task in taskList %}
+                {% if task.done == True %}
+                <tr  style="color: green;">
+                {% else %}
+                <tr>
+                {% endif %}
+                    <td>{{task.id}}</td>
+                    <td>{{task.tittle}}</td>
+                    <td style="max-width: 300px">{{task.description}}</td>
+                    <td>{{task.project.name}}</td>
+                    <td>
+                        {% if task.done == False %}
+                        <p>Tarea pendiente</p>
+                        {%endif%}
+
+                        {% if task.done == True %}
+                        <p>Tareha realizada</p>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <button style="color: green;">
+                            ✓Done
+                        </button>
+                        <button style="color: red;">
+                            🗑Delete
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <button class="boton-simulado" style="margin-top: 5%;">
+            <a href="/tasks/createTask">Crear tarea</a>
+        </button>
+    </div>
+</body>
+</html>
+
+{% endblock %}

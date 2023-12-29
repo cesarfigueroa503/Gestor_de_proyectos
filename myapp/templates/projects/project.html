@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+
+            <h1>Lista de Proyectos</h1>
+            
+            <ul class="lista-minimalista" style="margin: 10px;">
+                {% for project in projects %}
+                <li>
+                    <a href="{% url 'projectDetails' project.id %}" style="text-decoration: none; color: black;">
+                        {{project.name}}
+                    </a>
+                </li>
+                {%endfor%}
+            </ul>
+            <div class="boton-simulado">
+                <a href="{% url 'createProject' %}" style="text-decoration: none; color: black;">
+                    Crear Proyecto
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+{% endblock %}

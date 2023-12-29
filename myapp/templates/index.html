@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h3>¡Bienvenido a nuestra Aplicación de Gestión de Proyectos!</h3>
+        <p>En nuestra plataforma, podrás organizar tus proyectos de manera eficiente y colaborativa. Simplifica la gestión de tareas, coordina equipos y haz un seguimiento claro del progreso de cada proyecto.        
+        </p>
+        <img src="{% static 'tipos-clasificacion-paginas-web.png' %}" alt="" width="300">
+    </div>
+    <section id="inicio">
+        <div class="container">
+            <p>En nuestra plataforma, podrás organizar tus proyectos de manera eficiente y colaborativa. Simplifica la gestión de tareas, coordina equipos y haz un seguimiento claro del progreso de cada proyecto.</p>
+        </div>
+    </section>
+
+    <section id="features" class="destacados">
+        <div class="container">
+            <h2>Características Destacadas</h2>
+            <ul>
+                <li>Creación de Proyectos</li>
+                <li>Gestión de Tareas</li>
+                <li>Colaboración en Equipo</li>
+                <li>Vista de Progreso</li>
+                <li>Flexibilidad y Personalización</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="signup" class="registro">
+        <div class="container">
+            <h2>¡Regístrate Ahora!</h2>
+            <p>Comienza a mejorar tu productividad hoy mismo. ¡Regístrate para explorar todas las funciones que nuestra plataforma tiene para ofrecerte!</p>
+            <a href="#registro" class="boton">Registrarse</a>
+        </div>
+    </section>
+
+    <section id="login" class="inicio-sesion">
+        <div class="container">
+            <h2>Inicia Sesión</h2>
+            <p>¿Ya eres parte de nuestra comunidad? Inicia sesión para acceder a tu cuenta.</p>
+            <a href="#login" class="boton">Iniciar Sesión</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Derechos Reservados &copy; 2023 - Aplicación de Gestión de Proyectos</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    
+    {% block content %}
+    <h1>Tareas de {{ projectName }}</h1>
+    <table border="1" class="tableStyle">
+
+        <tr style="background-color: chocolate;">
+            <td style="width: 30px; text-align: center;">id</td>
+            <td style="max-width: 200px">Tarea</td>
+            <td style="max-width: 200px">Descripcion</td>
+            
+            <td>Estado</td>
+        </tr> 
+        {% for task in tasks %}
+        {% if task.done == True %}
+        <tr  style="color: green;">
+        {% else %}
+        <tr>
+        {% endif %}
+            <td style="text-align: center; ">{{task.id}}</td>
+            <td >{{task.tittle}}</td>
+            <td >{{task.description}}</td>
+            
+            <td> 
+                {% if task.done == False %}
+                <p>Tarea pendiente</p>
+                {%endif%}
+
+                {% if task.done == True %}
+                <p>Tareha realizada</p>
+                {% endif %}
+            </td>
+            <td>
+                <button style="color: green;">
+                    ✓Done
+                </button>
+                <button style="color: red;">
+                    🗑Delete
+                </button>
+            </td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+    <br>
+    <button class="boton-simulado">
+        <a href="/tasks/createTask">Crear tarea</a>
+    </button>
+    
+    
+    {% endblock %}
+</body>
+</html>

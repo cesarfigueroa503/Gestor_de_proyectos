@@ -1,0 +1,17 @@
+/* Estilos para la lista */
+.lista-minimalista {
+    list-style: none; /* Quita los estilos de viñeta por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.lista-minimalista li {
+    padding: 8px 16px; /* Espaciado interior de los elementos */
+    border-bottom: 1px solid #ccc; /* Línea separadora entre elementos */
+    transition: background-color 0.3s; /* Transición suave al pasar el ratón */
+}
+
+.lista-minimalista li:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
